@@ -1,0 +1,26 @@
+# The workspace also holds the creator's source media, local scores, and QA records.
+# Only the files needed to serve and maintain the arcade belong in this public repo.
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/app.js
+!/style.css
+!/server.js
+!/package.json
+!/assets/
+/assets/*
+!/assets/*.js
+!/assets/*.css
+!/assets/*.html
+!/assets/corky.webp
+!/assets/corky-pop-opaque.png
+!/assets/corky-intro-poster.webp
+!/assets/hotdog-jesus.png
+!/assets/party-bottle.png
+!/assets/party-hotdog.png
+!/assets/pool-scenery.webp
+!/assets/preacher.png
+!/assets/toon-*.png
+!/assets/vendor/
+!/assets/corky-intro-through-pop.mp4

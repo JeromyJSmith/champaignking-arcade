@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#241229">
+  <title>Corky's Big Pop! · Champaignking Arcade</title>
+  <link rel="stylesheet" href="pop-round.css">
+  <script defer src="phaser.min.js"></script>
+  <script defer src="pixi.min.js"></script>
+  <script defer src="pop-effects.js"></script>
+  <script defer src="pool-catchers.js"></script>
+  <script defer src="sauce-show.js"></script>
+  <script defer src="bottle-hand.js"></script>
+  <script defer src="cork-line.js"></script>
+  <script defer src="contestant-voice.js"></script>
+  <script defer src="pool-funk.js"></script>
+  <script defer src="champagne-pop.js"></script>
+  <script defer src="pop-round.js"></script>
+  <script defer src="party-intro.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <nav aria-label="Arcade">
+      <a href="../" class="back"><span aria-hidden="true">←</span> Champaignking Arcade</a>
+      <button type="button" id="replay-intro">Opening film</button>
+    </nav>
+    <header class="marquee">
+      <div>
+        <p class="edition">Pool Party</p>
+        <h1>Corky’s Big Pop<span>!</span></h1>
+      </div>
+      <dl class="round-stats" aria-label="Round progress">
+        <div>
+          <dt>Score</dt>
+          <dd id="score">0</dd>
+        </div>
+        <div>
+          <dt>Throws used</dt>
+          <dd><span id="throws">0</span><span class="round-total"> / 3</span></dd>
+        </div>
+      </dl>
+    </header>
+    <section class="cabinet" aria-label="Pool party game">
+      <div class="playfield">
+        <div id="game" role="img" aria-label="Pool party course with a launcher and scoring targets" aria-describedby="aim-hint"></div>
+        <div id="pop-effects" aria-hidden="true" data-renderer="pending"></div>
+      </div>
+      <div class="controls" aria-label="Launch controls" role="group">
+        <div class="sliders">
+          <label class="slider" for="angle">
+            <span>Angle <output id="angleValue" for="angle">40°</output></span>
+            <input id="angle" type="range" min="15" max="70" value="40">
+          </label>
+          <label class="slider" for="power">
+            <span>Power <output id="powerValue" for="power">60%</output></span>
+            <input id="power" type="range" min="25" max="100" value="60">
+          </label>
+        </div>
+        <div class="actions">
+          <button type="button" id="throw">Pop Corky!</button>
+          <button type="button" id="boost" disabled>Bubble boost</button>
+        </div>
+      </div>
+      <p class="aim-hint" id="aim-hint">For a drag shot, pull the launcher down and left, then release.</p>
+      <div class="round-footer">
+        <p id="status" role="status" aria-live="polite">Set your angle and power, then take your first shot.</p>
+        <div class="round-actions">
+          <button type="button" id="music" aria-pressed="false">♫ Play funk</button>
+          <button type="button" id="mode">Champagne cork</button>
+          <button type="button" id="restart">New round</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <dialog id="party-intro" aria-labelledby="intro-title">
+    <div class="film-marquee">
+      <span>Champaignking Arcade</span>
+      <button type="button" id="skip-film">Skip intro →</button>
+    </div>
+    <div class="film-layout">
+      <video id="corky-film" controls playsinline muted preload="auto" poster="corky-intro-poster.webp" aria-label="Corky introduces himself"></video>
+      <div class="film-program">
+        <p class="edition">Pool party double feature</p>
+        <h2 id="intro-title">Corky’s <br>Big Pop<span>!</span></h2>
+        <p>Pick your contest</p>
+        <button type="button" data-contest="cork"><strong>ChampaignKing</strong><small>Pop Corky across the pool.</small></button>
+        <button type="button" data-contest="dog"><strong>Hotdog Eating Contest</strong><small>Feed the pool crowd. Nail a mouth catch!</small></button>
+      </div>
+    </div>
+  </dialog>
+</body>
+</html>
